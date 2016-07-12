@@ -1,5 +1,5 @@
 # NormalizeLineLength
-A cross-language [Sublime Text](http://www.sublimetext.com/) plugin for sorting items in a list. Handles lists without opening and closing list delimiters, and lists with trailing commas. Preserves lists' quote style (single vs. double).
+A [Sublime Text](http://www.sublimetext.com/) plugin for grabbing multiple lines of text and normalizing the line length. Splits lines only on spaces. Preserves leading spaces. Particularly handy for comments and docstrings.
 
 - [Demo](#demo)
 - [Installation](#installation)
@@ -15,8 +15,7 @@ A cross-language [Sublime Text](http://www.sublimetext.com/) plugin for sorting 
 
 ## Installation
 
-#### From Package Control
-`NormalizeLineLength` is available via [Sublime Package Control](https://sublime.wbond.net/packages/NormalizeLineLength). This is the recommended way to install the plugin.
+#### Package Control
 
 #### From GitHub
 Alternatively, you may install via GitHub by cloning this repository into the `Packages`
@@ -29,19 +28,19 @@ git clone https://github.com/kylebebak/sublime_normalize_line_length.git
 
 
 ## Usage
-Highlight one or more lists and run the command. If the lists can't be sorted exceptions with line numbers will be displayed in the __quick panel__.
+Highlight text. Run command. If the text contains a word whose length exceeds the max line length, an exception will be displayed in the __quick panel__.
 
-The name of the command is `normalize_line_length`. It appears in the `Command Palette` as `Sort List`. If you want to use it with a minimum of hassle add a shortcut to your `.sublime-keymap`.
+The name of the command is `normalize_line_length`. It appears in the `Command Palette` as `Normalize`. If you want to use it with a minimum of hassle add a shortcut to your `.sublime-keymap`.
 
 ```json
-{ "keys": ["shift+alt+super+o"], "command": "normalize_line_length" }
+{ "keys": ["ctrl+alt+super+n"], "command": "normalize_line_length" }
 ```
 
-If you want to change the list delimiter characters, override [NormalizeLineLength.sublime-settings](./NormalizeLineLength.sublime-settings).
+The default max line length is __80 chars__. If you want to change this, override `max_line_length` in [NormalizeLineLength.sublime-settings](./NormalizeLineLength.sublime-settings).
 
 
 ## Tests
-From the root directory, run `python3 -m unittest discover --verbose`. Some of the tests will fail in Python 2, but the plugin still works fine in Sublime Text 2.
+From the root directory, run `python3 -m unittest discover --verbose`.
 
 
 ## Contributing

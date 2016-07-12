@@ -1,0 +1,4 @@
+    """Log entry for a (`patient`, `shift`) tuple filled out by nurse. For each `shift_day` in a shift, all the tasks in the `CareSchedule` instance assigned to the shift are added to this table. A `shift_day` is defined as the number of full days that have passed since the start of the shift. This allows a `CareSchedule` instance to create sensible log entries for a shift regardless of when the shift starts and ends.
+           
+                      
+    Although records in this table are generated from a `CareSchedule` instance, they don't point to this table. This ensures this is a "fact" table whose records are not deleted from the database, even if the schedule changes."""
