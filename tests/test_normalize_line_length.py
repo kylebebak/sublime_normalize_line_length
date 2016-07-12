@@ -1,19 +1,17 @@
 import unittest
 import json
 
-from sorted_string import sorted_string
+from normalize_line_length import normalize_line_length
 
 
-class TestSortedString(unittest.TestCase):
-    SETTINGS_FILE_NAME = 'SortList.sublime-settings'
+class TestNormalizeLineLength(unittest.TestCase):
+    SETTINGS_FILE_NAME = 'NormalizeLineLength.sublime-settings'
 
     @classmethod
     def setUpClass(cls):
         with open(cls.SETTINGS_FILE_NAME) as settings_file:
             settings = json.load(settings_file)
-        cls.slc, cls.elc = settings['start_list_chars'], settings['end_list_chars']
-        # fix args for sorted string
-        cls.sorted_string = lambda c, s: sorted_string(s, cls.slc, cls.elc)
+        cls.ll = settings['max_line_length']
 
     def test_list(self):
         self.assertEqual(self.sorted_string("['dog', 'cat', 'mouse']"),
