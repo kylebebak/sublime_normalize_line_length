@@ -2,6 +2,10 @@ import re
 
 
 def normalize_line_length(s, ll=80):
+    """The workhorse for the plugin. More than two line breaks between
+    non-whitespace text is treated as a paragraph. Paragraphs are normalized
+    separately.
+    """
     ll = max(20, ll)
     lines = s.split("\n")
 
@@ -26,6 +30,9 @@ def normalize_line_length(s, ll=80):
 
 
 def get_next_line_from_paragraph(paragraph, ll):
+    """Return the largest substring from `paragraph` that ends in a space and
+    doesn't exceed `ll`. Raise exception f no such string exists.
+    """
     if paragraph[ll] is ' ':
         index = ll+1
     else:
