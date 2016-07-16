@@ -17,6 +17,8 @@ class TestNormalizeLineLength(unittest.TestCase):
             cls.test_string = f.read()
 
     def test_file(self):
+        """Test un-normalized text against normalized text.
+        """
         with open ("tests/test_check.txt") as f:
             test_string_check = f.read()
         test_string_normalized = normalize_line_length(self.test_string)
@@ -24,8 +26,13 @@ class TestNormalizeLineLength(unittest.TestCase):
         self.assertEqual(normalize_line_length(test_string_normalized[:l]), test_string_check[:l])
 
     def test_max_length_and_last_char(self):
+        """Fuzz testing =)
+
+        Make sure the line length of normalized text never exceeds the max line
+        length, and that the last character in a line is never a space.
+        """
         import random
-        for MAX_LENGTH in set(random.randint(40, 60) for i in range(10)):
+        for MAX_LENGTH in set(random.randint(40, 80) for i in range(10)):
             with open ("tests/dickens.txt") as f:
                 string = normalize_line_length(f.read(), MAX_LENGTH)
 
