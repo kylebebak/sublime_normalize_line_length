@@ -14,6 +14,7 @@ A [Sublime Text](http://www.sublimetext.com/) plugin for grabbing multiple lines
 
 
 ## Installation
+`NormalizeLineLength` is available via [Sublime Package Control](https://sublime.wbond.net/packages/NormalizeLineLength). This is the recommended way to install the plugin.
 
 #### Package Control
 
