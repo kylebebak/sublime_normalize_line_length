@@ -14,18 +14,7 @@ A [Sublime Text](http://www.sublimetext.com/) plugin for grabbing multiple lines
 
 
 ## Installation
-`NormalizeLineLength` is available via [Sublime Package Control](https://sublime.wbond.net/packages/NormalizeLineLength). This is the recommended way to install the plugin.
-
-#### Package Control
-
-#### From GitHub
-Alternatively, you may install via GitHub by cloning this repository into the `Packages`
-directory under Sublime Text's data directory. For example, on OSX:
-
-```
-cd "~/Library/Application Support/Sublime Text 3/Packages"
-git clone https://github.com/kylebebak/sublime_normalize_line_length.git
-```
+Don't bother, [Wrap Plus](https://github.com/ehuss/Sublime-Wrap-Plus) does everything this plugin does and then some. I didn't notice this until after I wrote the plugin =/
 
 
 ## Usage
