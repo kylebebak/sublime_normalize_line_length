@@ -30,8 +30,6 @@ git clone https://github.com/kylebebak/sublime_normalize_line_length.git
 ## Usage
 Highlight text. Run command. If the text contains a word whose length exceeds the max line length, an exception will be displayed in the __quick panel__.
 
-Set your line endings to `Unix` under __View -> Line Endings__. I don't know how the plugin behaves with Windows line endings.
-
 The name of the command is `normalize_line_length`. It appears in the `Command Palette` as `Normalize`. If you want to use it with a minimum of hassle add a shortcut to your `.sublime-keymap`.
 
 ```json
@@ -39,6 +37,10 @@ The name of the command is `normalize_line_length`. It appears in the `Command P
 ```
 
 The default max line length is __80 chars__. If you want to change this, override `max_line_length` in [NormalizeLineLength.sublime-settings](./NormalizeLineLength.sublime-settings).
+
+### Windows Line Endings
+
+If your file has Windows line endings (__carriage return__ + __line feed__), set your line endings to `Unix` under __View -> Line Endings__ before running the plugin. `NormalizeLineLength` doesn't quite work as advertised for Windows line endings.
 
 
 ## Tests
